@@ -1,0 +1,56 @@
+\documentclass[addpoints]{exam}
+\usepackage{amsmath, amsfonts}
+\usepackage{forest}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titling}
+
+% Header and footer.
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\runningheader{CS 212, Fall 2022}{HW 3: Turing Machines, Decidability \& Recognizabality}{\theauthor}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+
+\boxedpoints
+
+\title{Homework 3: Turing Machines, Decidability \& Recognizabality}
+\author{ungraded} % <=== replace with your team name
+\date{CS 212 Nature of Computation\\Habib University\\Fall 2022}
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question \label{q:lang} A Turing machine is said to \textit{compute} a function $f$ if, started with an input $x$ on its tape, it halts with $f(x)$ on its tape. Consider a binary operator $\triangle$ and a function $f$ defined as follows.
+  \begin{align*}
+    0\triangle 0=1, 0\triangle 1=1, 1\triangle 0=0,1\triangle 1=1\\
+    f:\{0,1\}^n\times \{0,1\}^n\to \{0,1\}^n, n\in \mathbb{Z}-\mathbb{Z}^-    \\
+    f(a,b) = \{ c_1c_2\ldots c_n \mid c_i = a_i\triangle b_i, i = 1,2,\ldots,n\}
+  \end{align*}
+
+Consider the Turing machine, $M$, that computes $f$ given a $\#$-separated pair of binary strings as input. The Turing machine should print nothing if the function is undefined.
+
+\begin{parts}
+  \part[5] Give a high-level description of $M$.
+  \part[5] Give a formal description of $M$, expressing the transition function, $\delta$, as a state diagram that shows all the transitions.
+  \end{parts}
+
+\question [10] An $\textit{Euclidean-Space}$ Turing machine has the usual finite-state control but a tape that extends in a three-dimensional grid of cells, infinite in all directions. Both the head and the first input symbol are initially placed at a cell designated as the origin. Each consecutive input symbol is in one of the six neighboring cells and does not overwrite a previous symbol. The head can move in one transition to any of the six neighboring cells. All other workings of the Turing machine are as usual. Provide a formal description of the \textit{Euclidean-Space} Turing Machine and prove that it is equivalent to an ordinary Turing machine. Recall that two models are equivalent if each can simulate the other.
+
+\question [10] Theorem 4.5 in our textbook states that $EQ_{DFA}$ is decidable. Formally define $EQ_{PDA}$ and prove that if it is undecidable, it is also unrecognizable. 
+
+  
+\question [10] Let $A = \{L \mid L\text{ is decidable but not context-free}\}$. Prove that every element of $A$ contains an unrecognizable subset.
+
+
+\end{questions}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
